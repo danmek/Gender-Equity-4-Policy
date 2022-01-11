@@ -1,0 +1,12 @@
+| Date/Time  | Type | Points added | Total points | Points completed | Juli | Dana | Kelly | Yael | Remaining points | 
+| ---------- | ---- | ------------ | ------------ | ---------------- | ---  | ---- | ----- | ---- | ---------------- |
+| Sun, 1/9 | Slack | 0 | 46 | 27 | 8 | 5 | 9 | 5  | 19 | 
+| Mon, 1/10 | In-person | 10 | 29 | 19 | 5 | 4 | 5 | 5  | 10 | 
+
+
+Points to discuss agin (have been decided arbitrarily by Juli for burndown calculation purposes)
+* Get familiar with Github and web development for project [everyone] [5 pts each] 
+* Scaffolding for functional website [3 pts]
+* Evidence to support working mothers [5 pts]
+* US gender wage gap [5 pts ]
+* Have marked Yael as 5 pts per day as a rough estimates
