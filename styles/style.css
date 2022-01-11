@@ -1,0 +1,69 @@
+html {
+  font-size: 16px; 
+  /* px means "pixels": the base font size is now 10 pixels high  */
+  font-family: "Lato", sans-serif; 
+  /* this should be the rest of the output you got from Google fonts */
+  /* background-color: #C9D8E8; */
+}
+
+h1 {
+  font-size: 30px;
+  text-align: left;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  padding: 20px 0;
+  color: #00539F;
+  /*text-shadow: 3px 3px 1px black; */
+}
+
+p{
+  font-size: 16px;
+}
+
+a{
+  font-size: 16px;
+}
+
+.takeaway{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+.chartexplain{
+  font-style: italic;
+}
+
+body {
+  width: 600px;
+  margin: 50px 50px 50px 100px;
+  /*background-color: #EEEFF0;
+  border: 5px solid black;*/
+  padding: 0 20px 20px 20px;
+  
+}
+
+img{
+  display: block;
+  margin: 0 auto;
+  align-tiems
+}
+
+.source{
+  color: darkgray;
+  font-size: 12px;
+}
+
+.notes{
+  color: darkgray;
+  font-size: 12px;
+}
+
+#mainquote{
+  color:  purple;
+  border: 6px solid black;
+}
