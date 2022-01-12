@@ -96,3 +96,7 @@ function GroupedBarChart(data, {
 
   return Object.assign(svg.node(), {scales: {color: zScale}});
 }
+
+d3.csv("data/test.csv").get(function(error,data){
+    console.log(data);
+})
