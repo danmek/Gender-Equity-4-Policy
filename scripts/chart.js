@@ -57,7 +57,7 @@ function GroupedBarChart(data, {
     title = i => T(O[i], i, data);
   }
 
-  const svg = d3.select(container).create("svg")
+  const svg = d3.create("svg")
       .attr("width", width)
       .attr("height", height)
       .attr("viewBox", [0, 0, width, height])
@@ -112,7 +112,52 @@ var testdata = d3.csv("data/test.csv").get(function(error,data){
 
 console.log(GroupedBarChart(testdata, {}));*/
 
-var testdata = d3.csv("data/test.csv").get(function(error,data){data});
 
+d3.csv("/data/test.csv")
+  .then(function(data) {
+    //data is now the whole dataset
+    //draw chart in here
+    genders = data; //d3.csv("/data/test.csv", function(data){});
+    ages = genders.columns.slice(1);
+    genderages = ages.flatMap(age => genders.map(d => ({gender: d.gender, age, labor: d[age]})));
 
-console.log(testdata);
+  GroupedBarChart(genderages, {
+    x: d => d.gender,
+    y: d => d.labor,
+    z: d => d.age,
+    xDomain: d3.groupSort(genderages, D => d3.sum(D, d => -d.labor), d => d.gender).slice(0, 6), // top 6
+    yLabel: "Labor force participation rate (%)",
+    zDomain: ages,
+    colors: d3.schemeSpectral[ages.length],
+    width:500,
+    height: 500
+  });
+})
+
+/*
+genders = d3.csv("/data/test.csv", function(data){});
+ages = genders.columns.slice(1);
+genderages = ages.flatMap(age => genders.map(d => ({gender: d.gender, children, labor: d[age]})));
+
+GroupedBarChart(genderages, {
+  x: d => d.gender,
+  y: d => d.labor,
+  z: d => d.age,
+  xDomain: d3.groupSort(genderages, D => d3.sum(D, d => -d.labor), d => d.gender).slice(0, 6), // top 6
+  yLabel: "Labor force participation rate (%)",
+  zDomain: ages,
+  colors: d3.schemeSpectral[ages.length],
+  width,
+  height: 500
+})
+;
+
+*/
+
+/*
+
+states = FileAttachment("us-population-state-age.csv").csv({typed: true})
+
+ages = states.columns.slice(1)
+
+stateages = ages.flatMap(age => states.map(d => ({state: d.name, age, population: d[age]}))) // pivot longer*/
