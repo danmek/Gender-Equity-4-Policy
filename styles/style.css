@@ -1,7 +1,8 @@
+/*OVERALL STYLING*/
 html {
   font-size: 16px; 
   /*font-family: 'Lato', sans-serif; */
-  font-family: 'Adamina', serif;
+  font-family: 'Lato', sans-serif;
   /* this should be the rest of the output you got from Google fonts */
   /* background-color: #C9D8E8; */
 }
@@ -27,16 +28,6 @@ h1 {
   /*text-shadow: 3px 3px 1px black; */
 }
 
-/* set text */
-p {
-  font-size: 16px;
-}
-
-a {
-  font-size: 16px;
-}
-
-
 /* set specific styles for chart related texts */
 .takeaway{
   font-weight: bold;
@@ -61,14 +52,13 @@ a {
   font-size: 12px;
 }
 
-/* for navigation bar */
-/* Add a black background color to the top navigation */
-
+/* HOME PAGE HEADER */
 .header-section {
   margin: 0px 0px 0px 0px;
   background-color: #cce4e6;
 }
 
+/* NAVIGATION BAR */
 .topnav {
   padding: 50px 100px 0px 100px;
   overflow: hidden;
@@ -99,13 +89,14 @@ a {
   color: black;
 }
 
-/* Add a color to the active/current link */
+/* Add underline to the active/current link */
 .topnav a.active {
   text-decoration: underline;
+  font-weight: bold;
   color: black;
 }
 
-/* for header text */
+/* HEADER TEXT */
 .header-text p {
   text-align: center;
   padding: 5px 0px 5px 0px;
@@ -131,25 +122,25 @@ a {
 }
 
 #header-text1  span::before {
-  content: "More women are employed";
+  content: "more women are employed";
   animation: animate infinite 5s;
 }
 
 @keyframes animate {
   0% {
-    content: "More women are employed" ;
+    content: "more women are employed" ;
   }
 
   33% {
-    content: "More women are educated" ;
+    content: "more women are educated" ;
   }
 
   66% {
-    content: "More men support gender equality" ;
+    content: "more men support gender equality" ;
   }
 }
 
-/* topics section */
+/* HOME PAGE TOPICS SECTION */
 #topics-headline {
   padding: 50px;
   text-align: center;
@@ -193,8 +184,7 @@ a {
   }
 }
 
-
-/* how section */
+/* HOME PAGE HOW TO USE WEBSITE SECTION */
 /* Create 2 equal columns that floats next to each other */
 .how-column {
   float: left;
@@ -228,7 +218,7 @@ a {
   }
 }
 
-/* project section */
+/* HOME PAGE WHAT IS THIS PROJECT SECTION */
 /* Create 2 equal columns that floats next to each other */
 .project-column {
   float: left;
@@ -263,6 +253,7 @@ a {
 }
 
 
+/* SUBPAGE HEADERS */
 /* headers for subpages */
 
 .header-section-subpage {
