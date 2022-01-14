@@ -124,12 +124,12 @@ a {
   padding: 30px 0px 50px 0px;
 }
 
+/* animate header text */
 #header-text1 span{
   color: #c70039; 
   overflow: visible;
 }
 
-/* animate header text */
 #header-text1  span::before {
   content: "More women are employed";
   animation: animate infinite 5s;
@@ -260,4 +260,30 @@ a {
   .project-column {
     width: 100%;
   }
+}
+
+
+/* headers for subpages */
+
+.header-section-subpage {
+  margin: 0px 0px 0px 0px;
+  background-color: white;
+}
+/* for header text */
+.header-text-subpage p {
+  text-align: center;
+  padding: 5px 0px 5px 0px;
+  color: #015f66;
+  font-size: 25px;
+}
+
+#header-text-subpage1 {
+  font-size: 35px;
+  padding: 0px 0px 20px 0px;
+  font-weight: bold;
+}
+
+#header-text-subpage3 {
+  font-style: italic;
+  padding: 30px 0px 50px 0px;
 }
