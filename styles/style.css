@@ -1,31 +1,32 @@
 /*OVERALL STYLING*/
 html {
-  font-size: 16px; 
-  /*font-family: 'Lato', sans-serif; */
+  font-size: 18px; 
   font-family: 'Lato', sans-serif;
-  /* this should be the rest of the output you got from Google fonts */
-  /* background-color: #C9D8E8; */
-}
+ }
 
 body {
   /* width: 600px; */
-  /*background-color: #EEEFF0;
-  border: 5px solid black;*/  
+  /*background-color: #EEEFF0;*/
 }
 
 /* set heading */
 h1 {
-  font-size: 30px;
-  text-align: left;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  font-size: 35px;
+  text-align: center;
+  color: #015f66;
+  padding: 10px 0px 10px 0px;
 }
 
-h1 {
-  margin: 0;
-  padding: 20px 0;
-  color: #00539F;
-  /*text-shadow: 3px 3px 1px black; */
+h2 {
+  font-size: 25px;
+  text-align: center;
+  color: #015f66
+}
+
+h3 {
+  font-size: 20px;
+  text-align: center;
+  color: black;
 }
 
 /* set specific styles for chart related texts */
@@ -70,7 +71,7 @@ h1 {
   text-align: center;
   padding: 10px 10px;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 /* Style links on left / right separately */
@@ -97,31 +98,32 @@ h1 {
 }
 
 /* HEADER TEXT */
-.header-text p {
-  text-align: center;
-  padding: 5px 0px 5px 0px;
-  color: #015f66;
-  font-size: 25px;
+.header-text {
+  padding: 50px 0px 30px 0px;
 }
 
-#header-text1 {
-  font-size: 35px;
-  padding: 0px 0px 20px 0px;
+.header-text1 {
+  padding: 0px 0px 40px 0px;
   font-weight: bold;
 }
 
-#header-text3 {
+.header-text2 {
+  font-weight: normal;
+  padding: 0px 0px 0px 0px;
+}
+
+.header-text3 {
   font-style: italic;
-  padding: 30px 0px 50px 0px;
+  padding: 40px 0px 40px 0px;
 }
 
 /* animate header text */
-#header-text1 span{
+.header-text1 span{
   color: #c70039; 
   overflow: visible;
 }
 
-#header-text1  span::before {
+.header-text1  span::before {
   content: "more women are employed";
   animation: animate infinite 5s;
 }
@@ -144,8 +146,6 @@ h1 {
 #topics-headline {
   padding: 50px;
   text-align: center;
-  font-size: 25px;
-  color: #015f66;
 }
 
 /* Create three equal columns that floats next to each other */
@@ -168,7 +168,7 @@ h1 {
 
 .topics-column a{
   color: #015f66;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 /* Underline on hover */
@@ -252,29 +252,29 @@ h1 {
   }
 }
 
-
 /* SUBPAGE HEADERS */
-/* headers for subpages */
+/* using same style as page for the most part */
 
-.header-section-subpage {
-  margin: 0px 0px 0px 0px;
-  background-color: white;
+.header-description {
+  height: 150px;
+  font-size: 18px;
+  font-weight: normal;
+  position: relative;
+  margin: 10px 0px 40px 0px;
 }
-/* for header text */
-.header-text-subpage p {
+
+.header-description-text {
+  margin: 10px 10px 30px 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #e6f3f5;
+}
+
+.header-description-text p {
   text-align: center;
-  padding: 5px 0px 5px 0px;
   color: #015f66;
-  font-size: 25px;
-}
-
-#header-text-subpage1 {
-  font-size: 35px;
-  padding: 0px 0px 20px 0px;
-  font-weight: bold;
-}
-
-#header-text-subpage3 {
-  font-style: italic;
-  padding: 30px 0px 50px 0px;
+  padding: 5px 20px;
 }
