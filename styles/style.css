@@ -1,8 +1,15 @@
 html {
   font-size: 16px; 
-  font-family: 'Lato', sans-serif; 
+  /*font-family: 'Lato', sans-serif; */
+  font-family: 'Adamina', serif;
   /* this should be the rest of the output you got from Google fonts */
   /* background-color: #C9D8E8; */
+}
+
+body {
+  /* width: 600px; */
+  /*background-color: #EEEFF0;
+  border: 5px solid black;*/  
 }
 
 /* set heading */
@@ -21,27 +28,14 @@ h1 {
 }
 
 /* set text */
-p{
+p {
   font-size: 16px;
 }
 
-a{
+a {
   font-size: 16px;
 }
 
-body {
-  /* width: 600px; */
-  margin: 50px 100px 0px 100px;
-  /*background-color: #EEEFF0;
-  border: 5px solid black;*/
-  padding: 0 20px 20px 20px;
-  
-}
-
-img{
-  display: block;
-  /* margin: 0 auto;*/
-}
 
 /* set specific styles for chart related texts */
 .takeaway{
@@ -57,7 +51,6 @@ img{
   font-size: 16px;
 }
 
-
 .source{
   color: darkgray;
   font-size: 12px;
@@ -70,21 +63,24 @@ img{
 
 /* for navigation bar */
 /* Add a black background color to the top navigation */
+
+.header-section {
+  margin: 0px 0px 0px 0px;
+  background-color: #cce4e6;
+}
+
 .topnav {
-  background-color: white;
-  /*border-top: 2px solid lightgray;*/
-  border-bottom: 2px solid lightgray;
+  padding: 50px 100px 0px 100px;
   overflow: hidden;
 }
 
 /* Style the links inside the navigation bar */
 .topnav a {
-  color: gray;
+  color: darkslategray;
   text-align: center;
   padding: 10px 10px;
   text-decoration: none;
-  font-size: 15px;
-  font-family: 'Adamina', serif;
+  font-size: 16px;
 }
 
 /* Style links on left / right separately */
@@ -96,9 +92,10 @@ img{
   float: right;
 }
 
-/* Change the color of links on hover */
+/* Underline on hover */
 .topnav a:hover {
   text-decoration: underline;
+  font-weight: bold;
   color: black;
 }
 
@@ -106,4 +103,161 @@ img{
 .topnav a.active {
   text-decoration: underline;
   color: black;
+}
+
+/* for header text */
+.header-text p {
+  text-align: center;
+  padding: 5px 0px 5px 0px;
+  color: #015f66;
+  font-size: 25px;
+}
+
+#header-text1 {
+  font-size: 35px;
+  padding: 0px 0px 20px 0px;
+  font-weight: bold;
+}
+
+#header-text3 {
+  font-style: italic;
+  padding: 30px 0px 50px 0px;
+}
+
+#header-text1 span{
+  color: #c70039; 
+  overflow: visible;
+}
+
+/* animate header text */
+#header-text1  span::before {
+  content: "More women are employed";
+  animation: animate infinite 5s;
+}
+
+@keyframes animate {
+  0% {
+    content: "More women are employed" ;
+  }
+
+  33% {
+    content: "More women are educated" ;
+  }
+
+  66% {
+    content: "More men support gender equality" ;
+  }
+}
+
+/* topics section */
+#topics-headline {
+  padding: 50px;
+  text-align: center;
+  font-size: 25px;
+  color: #015f66;
+}
+
+/* Create three equal columns that floats next to each other */
+.topics-column {
+  float: left;
+  width: 33.33%;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.topics-section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.topics-column{
+  text-align: center;
+}
+
+.topics-column a{
+  color: #015f66;
+  font-size: 20px;
+}
+
+/* Underline on hover */
+.topics-column a:hover {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .topics-column {
+    width: 100%;
+  }
+}
+
+
+/* how section */
+/* Create 2 equal columns that floats next to each other */
+.how-column {
+  float: left;
+  width: 40%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.how-section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*style */
+.how-column h3 {
+  text-align: right;
+  padding: 0px 50px 0px 0px;
+}
+
+.how-column p {
+  text-align: left;
+  padding: 5px 0px 0px 0px;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .how-column {
+    width: 100%;
+  }
+}
+
+/* project section */
+/* Create 2 equal columns that floats next to each other */
+.project-column {
+  float: left;
+  width: 40%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.project-section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*style */
+.project-column h3 {
+  text-align: right;
+  padding: 0px 50px 0px 0px;
+}
+
+.project-column p {
+  text-align: left;
+  padding: 5px 20px 0px 0px;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .project-column {
+    width: 100%;
+  }
 }
