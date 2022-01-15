@@ -45,7 +45,8 @@ var yAxis = svg.append("g")
 function update(selectedVar) {
 
   // Parse the Data
-  d3.csv("https://raw.githubusercontent.com/danmek/Gender-Equity-4-Policy/data/oecd-d3-viz-unpaid.csv", function(data) {
+  d3.csv("data/oecd-d3-viz-unpaid.csv", 
+    function(data) {
 
     // X axis
     x.domain(data.map(function(d) { return d.group; }))
