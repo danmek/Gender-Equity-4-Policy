@@ -1,81 +1,170 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Unpaid labor page</title>
-<link rel="stylesheet" type="text/css" href="style.css">
 
-  </head>
-  <body>
-    <h1>The burden of “invisible labor”</h1>
-   
-   <h2>Why should you care?</h2>
+<head>
+  <link href="styles/style.css" rel="stylesheet">
+  <link href="styles/labor-children.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Adamina&family=Lato:wght@400&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Unpaid Labor</title>
+</head>
+
+<body>
+    <div class="header-section">
+        <div class="topnav">
+            <div class="topnav-left">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+            </div>
+
+            <div class="topnav-right">
+                <a class="active" ref="working-mothers.html">Family vs. Career</a>
+                <a href="wage-gap.html">Wage Gap</a>
+                <a href="hh-distribution.html">Invisible Labor</a>          
+            </div>        
+        </div>
+
+        <div class = "header-text">
+          <h1 class = "header-text1">The burden of “invisible labor”</h1>
+          <h2 class = "header-text2">Why should you care?</h2>
+          <div class="header-description">
+            <div class="header-description-text">
+              <p>Are you a woman who cares about both your career and having children - or do you love someone who does? In the last few decades, more and more women have entered the workforce. 
+              </p>
+              <p>But women are still spending more time on household activities, and on total work. This creates a toll for women all over the world.
+               </p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+
+<!--first chart-->
+  <div class="takeaway-container">
+    <p class="takeaway">
+      Women Spend More Time on Unpaid Work Across the world
+    </p>
+    
+    <div class="chart-description-container">
+      <div class="chart-description">
+        <p>The time women spend on unpaid work is almost <strong>50% more</strong> than the time men spend on unpaid work on average. <br>
+          In <strong>all</strong> OECD countries, women spend more time on unpaid work than men do.
+        </p>
+      </div>
+    </div>
+
+        
+    <p class="chart-explain">Time spent on unpaid work by gender, OECD data, 2022</p>
+    
+    <div class="d3-container">
+      <svg class="chart" id="unpaid-labor" width="500" height="300"></svg>
+    </div>
+    
+    <p class="source">Source: <a href="https://stats.oecd.org/index.aspx?queryid=54757">OECD website</a> </p>
+  </div>
+
+
+<!-- link to js and script files -->
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="/scripts/oecd-d3-viz-unpaid.js"></script>
+
+<!-- Add 2 buttons -->
+<button onclick="update('var1')">Men</button>
+<button onclick="update('var2')">Women</button>
+
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz"></div>
+
+
+
+<!--second chart-->
+  <div class="takeaway-container">
+    <p class="takeaway">
+      Women Spend More Time on Total Work Across the World
+    </p>
+    
+    <div class="chart-description-container">
+      <div class="chart-description">
+        <p>The <strong>total</strong> work hours, paid and unpaid together, of women is higher than men, all over the world (except Mexico).
+        </p>
+      </div>
+    </div>
+
+        
+    <p class="chart-explain">Total time spent working by gender, OECD data, 2022</p>
+    
+    <div class="d3-container">
+      <svg class="chart" id="unpaid-labor" width="500" height="300"></svg>
+    </div>
+    
+    <p class="source">Source: <a href="https://stats.oecd.org/index.aspx?queryid=54757/">OECD website</a> </p>
+  </div>
+
+<!-- link to js and script files -->
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="/scripts/oecd-d3-viz-total.js"></script>
+
+
+
+<!--third chart-->
+  <div class="takeaway-container">
+    <p class="takeaway">
+      Women Have a Higher Household Burden, Even If Fully Employed
+    </p>
+    
+    <div class="chart-description-container">
+      <div class="chart-description">
+        <p>Women employed full-time in the U.S spend more time in household activities than men employed full-time, and also helping and caring for other household members.
+        </p>
+      </div>
+    </div>
+
+        
+    <p class="chart-explain">Time spent on households by gender by employment status in the U.S., 2019
+    </p>
+    
+    <div class="d3-container">
+      <svg class="chart" id="unpaid-labor" width="500" height="300"></svg>
+    </div>
+    
+    <p class="source">Source: U.S. BUREAU OF LABOR STATISTICS Website</a> </p>
+  </div>
+
+<!-- link to js and script files -->
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="/scripts/labor-children.js"></script>
+
+
+
+<!--fourth chart-->
+  <div class="takeaway-container">
+    <p class="takeaway">
+      Women Spend More Time On Most Time-Consuming Household Activities 
+    </p>
+    
+    <div class="chart-description-container">
+      <div class="chart-description">
+        <p>Women in the U.S spend 50% more time in household activities than men. <br>
+          The only household activities which men spend more time on are the shorter traditionally mail gender activities.
+        </p>
+      </div>
+    </div>
+
+        
+    <p class="chart-explain">Time spent on households per activity, by gender in the U.S., 2019</p>
+    
+    <div class="d3-container">
+      <svg class="chart" id="unpaid-labor" width="500" height="300"></svg>
+    </div>
+    
+    <p class="source">Source: U.S. BUREAU OF LABOR STATISTICS Website</a> </p>
+  </div>
+
+
+  <!-- link to js and script files -->
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="/scripts/labor-children.js"></script>
   
-      <ul> 
-      <li>Are you a woman balancing a career and a household - or do you love someone who fits that description?</li>
-      <li>In the last few decades, more and more women have entered the workforce. But someone is still doing the dishes, cooking, and taking care of kids.</li>
-          <ul>
-            <li>Women are still spending more time on household activities, and more time on work total.</li>
-            <li>This creates a toll for women all over the world.</li>
-          </ul>
-       <li>Women spend more time on unpaid labor and total work:</li>
-          <ul>
-            <li>Across the world</li>
-            <li>Even if they are employed</li>
-            <li>Even if they have a present spouse</li>
-          </ul>
-    </ul>
-
-<!--------G1------------->
-
-<h2>Women spend more time on unpaid work across the world</h2>
-<h4>Time spent on unpaid work by gender, OECD data, 2022</h4>
-<img src="images/G1" alt="Time spent on unpaid work by gender">
-
-      <ul> 
-      <li>The time women spend on unpaid work is almost double than the time men spend on unpaid work on average across the world.
-      <li>In all OECD countries, women spend more time on unpaid work than men.
-    </ul>
-
-<p>Sourse: <a href="https://stats.oecd.org/index.aspx?queryid=54757/">OECD website</a> </p>
-
-<!--------G2------------->
-
-<h2>Women spend more time on total work across the world</h2>
-<h4>Total time spent working by gender, OECD data, 2022</h4>
-<img src="images/G2" alt="Total time spent working  by gender">
-
-      <ul> 
-      <li>The total work hours, paid + unpaid, of women is higher than men, all over the world (except Mexico).
-    </ul>
-
-<p>Sourse: <a href="https://stats.oecd.org/index.aspx?queryid=54757/">OECD website</a> </p>
-
-<!--------G3------------->
-
-<h2>Women have a higher household burden, even if they are full-employed</h2>
-<h4>Time spent on households by gender by employment status in the U.S., 2019</h4>
-<img src="images/G3" alt="Time spent on households by gender by employment status">
-
-      <ul> 
-      <li>Women employed full-time in the U.S spend more time in household activities than men employed full-time, and also helping and caring for other household members.
-    </ul>
-
-<p>Sourse: <a href="https://www.bls.gov/charts/american-time-use/activity-by-hldp.htm/">U.S. BUREAU OF LABOR STATISTICS Website</a> </p>
-
-
-<!--------G4------------->
-
-<h2>Women spend more time on all time-demanding household activities</h2>
-<h4>Time spent on households per activity, by gender in the U.S., 2019</h4>
-<img src="images/G4" alt="Time spent on households per activity, by gender">
-
-      <ul> 
-      <li>Women in the U.S spend 50% more time in household activities than men.
-      <li>The only household activities which men spend more time on are the shorter traditionally mail gender activities.
-    </ul>
-
-<p>Sourse: <a href="https://www.bls.gov/charts/american-time-use/activity-by-emp.htm/">U.S. BUREAU OF LABOR STATISTICS Website</a> </p>
-
-  </body>
+</body>
 </html>
