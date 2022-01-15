@@ -18,7 +18,7 @@ function drawGroupBarChart(attrId){
   var z = d3.scaleOrdinal()
       .range(["#081d58", "#1d91c0", "#7fcdbb"]);
 
-  d3.csv("/data/laborforce/labor_childrenage.csv", function(d, i, columns) {
+  d3.csv("/data/laborforce/labor-children.csv", function(d, i, columns) {
     for (var i = 1, n = columns.length; i < n; ++i) d[columns[i]] = +d[columns[i]];
     return d;
   }, function(error, data) {
@@ -84,4 +84,4 @@ function drawGroupBarChart(attrId){
   });
 }
 
-drawGroupBarChart("#labor_childrenage")
+drawGroupBarChart("#labor-children")

@@ -5,8 +5,7 @@ html {
  }
 
 body {
-  /* width: 600px; */
-  /*background-color: #EEEFF0;*/
+  text-align: center;
 }
 
 /* set heading */
@@ -27,30 +26,6 @@ h3 {
   font-size: 20px;
   text-align: center;
   color: black;
-}
-
-/* set specific styles for chart related texts */
-.takeaway{
-  font-weight: bold;
-  font-size: 20px;
-}
-
-.chartexplain{
-  font-style: italic;
-}
-
-.legend{
-  font-size: 16px;
-}
-
-.source{
-  color: darkgray;
-  font-size: 12px;
-}
-
-.notes{
-  color: darkgray;
-  font-size: 12px;
 }
 
 /* HOME PAGE HEADER */
@@ -278,3 +253,62 @@ h3 {
   color: #015f66;
   padding: 5px 20px;
 }
+
+/* FOR EACH CHART */
+.takeaway-container {
+  padding: 50px 0px 20px 0px;
+}
+
+/* set specific styles for chart related texts */
+.takeaway{
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+  margin: 30px 0px 30px 0px;
+  color: #015f66;
+}
+
+.chart-description-container {
+  height: 120px;
+  font-size: 18px;
+  font-weight: normal;
+  position: relative;
+  margin: 0px 0px 40px 0px;
+}
+
+.chart-description {
+  margin: 0px 10px 30px 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  text-align: center;
+  color: #015f66
+}
+
+.chart-explain{
+  font-style: italic;
+  font-size: 14px;
+  color: darkslategray;
+}
+
+.chart {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.source{
+  color: darkgray;
+  font-size: 12px;
+  margin: 10px 300px 10px 300px;
+}
+
+.notes{
+  color: darkgray;
+  font-size: 12px;
+  margin: 10px 300px 10px 300px
+}
+
