@@ -1,0 +1,28 @@
+seriesid,children,sex,maritalstatus
+LEU0252881500,N/A,All,N/A
+LEU0252881800,N/A,Men,N/A
+LEU0252882700,N/A,Women,N/A
+LEU0257632600,under 6,Women,N/A
+LEU0257632700,No own children under 18,Women,N/A
+LEU0257632900,under 18,Women,"Married, spouse present"
+LEU0257633000,6 to 17,Women,"Married, spouse present"
+LEU0257633100,under 6,Women,"Married, spouse present"
+LEU0257633200,No own children under 18,Women,"Married, spouse present"
+LEU0257633800,under 18,Men,N/A
+LEU0257633900,6 to 17,Men,N/A
+LEU0257634000,under 6,Men,N/A
+LEU0257634100,No own children under 18,Men,N/A
+LEU0257634300,under 18,Men,"Married, spouse present"
+LEU0257634400,6 to 17,Men,"Married, spouse present"
+LEU0257634500,under 6,Men,"Married, spouse present"
+LEU0257634600,No own children under 18,Men,"Married, spouse present"
+LEU0258187800,under 18,Women,N/A
+LEU0258187900,6 to 17,Women,N/A
+LEU0258188100,under 18,Women,All other statuses
+LEU0258188200,6 to 17,Women,All other statuses
+LEU0258188300,under 6,Women,All other statuses
+LEU0258188400,No own children under 18,Women,All other statuses
+LEU0258188600,under 18,Men,All other statuses
+LEU0258188700,6 to 17,Men,All other statuses
+LEU0258188800,under 6,Men,All other statuses
+LEU0258188900,No own children under 18,Men,All other statuses
