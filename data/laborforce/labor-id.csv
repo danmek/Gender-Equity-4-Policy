@@ -1,0 +1,42 @@
+seriesid,children,sex,maritalstatus
+FMUP1378851,under 18,All,N/A
+FMUP1378852,under 18,Men,N/A
+FMUP1378853,under 18,Women,N/A
+FMUP1378854,under 18,All,"Married, spouse present"
+FMUP1378855,under 18,Men,"Married, spouse present"
+FMUP1378856,under 18,Women,"Married, spouse present"
+FMUP1378857,under 18,All,All other statuses
+FMUP1378858,under 18,Men,All other statuses
+FMUP1378859,under 18,Women,All other statuses
+FMUP1378860,6 to 17,All,N/A
+FMUP1378861,6 to 17,Men,N/A
+FMUP1378862,6 to 17,Women,N/A
+FMUP1378863,under 6,All,N/A
+FMUP1378864,under 6,Men,N/A
+FMUP1378865,under 6,Women,N/A
+FMUP1378866,No own children under 18,All,N/A
+FMUP1378867,No own children under 18,Men,N/A
+FMUP1378868,No own children under 18,Women,N/A
+FMUP1378869,under 3,Women,N/A
+FMUP1378873,under 3,Women,"Married, spouse present"
+FMUP1378877,under 3,Women,All other statuses
+FMUP1392285,under 3,All,N/A
+FMUP1392286,under 3,Men,N/A
+FMUP1394649,6 to 17,All,"Married, spouse present"
+FMUP1394650,6 to 17,Men,"Married, spouse present"
+FMUP1394651,6 to 17,Women,"Married, spouse present"
+FMUP1394664,6 to 17,All,All other statuses
+FMUP1394665,6 to 17,Men,All other statuses
+FMUP1394666,6 to 17,Women,All other statuses
+FMUP1394679,under 6,All,"Married, spouse present"
+FMUP1394680,under 6,Men,"Married, spouse present"
+FMUP1394681,under 6,Women,"Married, spouse present"
+FMUP1394694,under 6,All,All other statuses
+FMUP1394695,under 6,Men,All other statuses
+FMUP1394696,under 6,Women,All other statuses
+FMUP1394709,No own children under 18,All,"Married, spouse present"
+FMUP1394710,No own children under 18,Men,"Married, spouse present"
+FMUP1394711,No own children under 18,Women,"Married, spouse present"
+FMUP1394724,No own children under 18,All,All other statuses
+FMUP1394725,No own children under 18,Men,All other statuses
+FMUP1394726,No own children under 18,Women,All other statuses
