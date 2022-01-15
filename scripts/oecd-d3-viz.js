@@ -23,63 +23,47 @@ d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_data
       .attr("transform", "translate(0," + height + ")")
       .call(d3.axisBottom(x));
 
-  // Y axis: initialization
+  // set the parameters for the histogram
+  var histogram = d3.histogram()
+      .value(function(d) { return d.price; })   // I need to give the vector of value
+      .domain(x.domain())  // then the domain of the graphic
+      .thresholds(x.ticks(70)); // then the numbers of bins
+
+  // And apply this function to data to get the bins
+  var bins = histogram(data);
+
+  // Y axis: scale and draw:
   var y = d3.scaleLinear()
       .range([height, 0]);
-  var yAxis = svg.append("g")
+      y.domain([0, d3.max(bins, function(d) { return d.length; })]);   // d3.hist has to be called before the Y axis obviously
+  svg.append("g")
+      .call(d3.axisLeft(y));
 
-  // A function that builds the graph for a specific value of bin
-  function update(nBin) {
+  // append the bar rectangles to the svg element
+  svg.selectAll("rect")
+      .data(bins)
+      .enter()
+      .append("rect")
+        .attr("x", 1)
+        .attr("transform", function(d) { return "translate(" + x(d.x0) + "," + y(d.length) + ")"; })
+        .attr("width", function(d) { return x(d.x1) - x(d.x0) -1 ; })
+        .attr("height", function(d) { return height - y(d.length); })
+        .style("fill", function(d){ if(d.x0<140){return "orange"} else {return "#69b3a2"}})
 
-    // set the parameters for the histogram
-    var histogram = d3.histogram()
-        .value(function(d) { return d.price; })   // I need to give the vector of value
-        .domain(x.domain())  // then the domain of the graphic
-        .thresholds(x.ticks(nBin)); // then the numbers of bins
-
-    // And apply this function to data to get the bins
-    var bins = histogram(data);
-
-    // Y axis: update now that we know the domain
-    y.domain([0, d3.max(bins, function(d) { return d.length; })]);   // d3.hist has to be called before the Y axis obviously
-    yAxis
-        .transition()
-        .duration(1000)
-        .call(d3.axisLeft(y));
-
-    // Join the rect with the bins data
-    var u = svg.selectAll("rect")
-        .data(bins)
-
-    // Manage the existing bars and eventually the new ones:
-    u
-        .enter()
-        .append("rect") // Add a new rect for each new elements
-        .merge(u) // get the already existing elements as well
-        .transition() // and apply changes to all of them
-        .duration(1000)
-          .attr("x", 1)
-          .attr("transform", function(d) { return "translate(" + x(d.x0) + "," + y(d.length) + ")"; })
-          .attr("width", function(d) { return x(d.x1) - x(d.x0) -1 ; })
-          .attr("height", function(d) { return height - y(d.length); })
-          .style("fill", "#69b3a2")
-
-
-    // If less bar in the new histogram, I delete the ones not in use anymore
-    u
-        .exit()
-        .remove()
-
-    }
-
-
-  // Initialize with 20 bins
-  update(20)
-
-
-  // Listen to the button -> update if user change it
-  d3.select("#nBin").on("input", function() {
-    update(+this.value);
-  });
+  // Append a vertical line to highlight the separation
+  svg
+    .append("line")
+      .attr("x1", x(140) )
+      .attr("x2", x(140) )
+      .attr("y1", y(0))
+      .attr("y2", y(1600))
+      .attr("stroke", "grey")
+      .attr("stroke-dasharray", "4")
+  svg
+    .append("text")
+    .attr("x", x(190))
+    .attr("y", y(1400))
+    .text("threshold: 140")
+    .style("font-size", "15px")
 
 });
