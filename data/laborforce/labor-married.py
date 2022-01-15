@@ -35,27 +35,28 @@ pprint(labor_married)
 # Women, under 18, "Married, spouse present"
 # Women, under 18, "All other statuses"
 
+[
+	{Marriage: something, men: value, women: value}
+	{marriage: something, men: soething, women: something}
+]
+
 checkcount = 0
 
 for row_data in labor:
 	if row_data['Gender'] == "Men" and row_data['Children'] == "under 18" and row_data['MaritalStatus'] == "Married, spouse present" and row_data['Label'] == "2020 Annual":
-		labor_married['Marital Status'] = row_data['MaritalStatus']
-		labor_married['Men'] = row_data['Value']
+		men_married = row_data['Value']
 		checkcount = checkcount+1
 	if row_data['Gender'] == "Men" and row_data['Children'] == "under 18" and row_data['MaritalStatus'] == "All other statuses" and row_data['Label'] == "2020 Annual":
-		labor_married['Marital Status'] = row_data['MaritalStatus']
-		labor_married['Men'] = row_data['Value']
+		men_other = row_data['Value']
 		checkcount = checkcount+1
 	if row_data['Gender'] == "Women" and row_data['Children'] == "under 18" and row_data['MaritalStatus'] == "Married, spouse present" and row_data['Label'] == "2020 Annual":
-		labor_married['Marital Status'] = row_data['MaritalStatus']
-		labor_married['Women'] = row_data['Value']
+		women_married = row_data['Value']
 		checkcount = checkcount+1
 	if row_data['Gender'] == "Women" and row_data['Children'] == "under 18" and row_data['MaritalStatus'] == "All other statuses" and row_data['Label'] == "2020 Annual":
-		labor_married['Marital Status'] = row_data['MaritalStatus']
-		labor_married['Women'] = row_data['Value']
+		women_other = row_data['Value']
 		checkcount = checkcount+1
 
-pprint(labor_married)
+labor_married = {'Gender': }
 pprint(checkcount)
 
 
