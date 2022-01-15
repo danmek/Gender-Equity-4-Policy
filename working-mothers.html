@@ -2,42 +2,67 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
 	<link href="styles/style.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
-	<title>Gender Equity for Policy</title>
+	<link href="styles/labor-children.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Adamina&family=Lato:wght@400&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gender Equity for Policy</title>
 </head>
 
 <body>
-	<!--header-->
-	<h1>Mothers in the workforce</h1>
+    <div class="header-section">
+        <div class="topnav">
+            <div class="topnav-left">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+            </div>
+
+            <div class="topnav-right">
+                <a class="active" ref="working-mothers.html">Family vs. Career</a>
+                <a href="wage-gap.html">Wage Gap</a>
+                <a href="hh-distribution.html">Invisible Labor</a>          
+            </div>        
+        </div>
+
+        <div class = "header-text">
+        	<h1 class = "header-text1">Family vs. Career: Mothers in the Workforce</h1>
+        	<h2 class = "header-text2">Why should you care?</h2>
+        	<div class="header-description">
+        		<div class="header-description-text">
+        			<p>Are you a woman who cares about both your career and having children - or do you love someone who does? We often think that mothers can return to the workforce when their children get older or when they have supportive spouses. <br><br>But the data shows us that’s not the case. </p>
+        		</div>
+        	</div>
+        </div>
+    </div>
 
 	<!--first chart-->
-	<p class="takeaway">Mothers work less than fathers - regardless of the age of their children</p>
-	<p class="chartexplain">U.S. labor force participation by gender and age of children, 2020</p>
-	<img src="images/workforce-mothers-1.png" alt="Mothers work less than fathers, regardless of the age of their children.">
-	
-	<br>
-	<br>
+	<div class="takeaway-container">
+		<p class="takeaway">
+			Mothers can’t return to the workforce just because children get older
+		</p>
+		
+		<div class="chart-description-container">
+			<div class="chart-description">
+				<p>A common narrative we see is that women can return to the workplace when children are old enough to go to daycare or school. However, the labor force participation of mothers still remains 20% less than fathers, even when children are older than 6. </p>
+			</div>
+		</div>
 
-	<!--second chart-->
-	<p class="takeaway">When a spouse is present, fathers work more, but mothers work less, regardless of age of children</p>
-	<p class="chartexplain">U.S. labor force participation by gender, age of children, and marital status, 2020</p>
-	<img src="images/workforce-mothers-2.png" alt="When a spouse is present, fathers work more, but mothers work less, regardless of age of children.">
+				
+		<p class="chart-explain">U.S. labor force participation by gender and age of children, 2020</p>
+		
+		<div class="d3-container">
+			<svg class="chart" id="labor-children" width="500" height="300"></svg>
+		</div>
+		
+		<p class="source">Source: U.S. Bureau of Labor Statics, Current Population Survey</p>
 
-	<br>
-	<br>
+		<p class="notes">Notes: Labor force participation rate represents the percentage of parents in the civilian noninstitutional population 16 years of age and older that are employed or actively looking for work. Children are own children and include biological children, step-children, or adopted children. Estimates refer to co-residential children only.
+		</p>
+	</div>
 
-	<!--third chart-->
-	<p class="takeaway">The gender wage gap persists between mothers and fathers, regardless of age of children</p>
-	<p class="chartexplain">Median weekly earnings in dollars by gender and age of children, 2020</p>
-	<img src="images/workforce-mothers-3.png" alt="The gender wage gap persists between mothers and fathers, regardless of age of children.">
-
-	<!--sources and notes-->
-	<p class="source">Source: U.S. Bureau of Labor Statics, Current Population Survey</p>
-
-	<p class="notes">Notes: Labor force participation rate represents the percentage of parents in the civilian noninstitutional population 16 years of age and older that are employed or actively looking for work. Children are own children and include biological children, step-children, or adopted children. Estimates refer to co-residential children only.
-	</p>
+	<!-- link to js and script files -->
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="/scripts/labor-children.js"></script>
 	
 </body>
 </html>
