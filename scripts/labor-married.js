@@ -16,7 +16,7 @@ function drawGroupBarChart(attrId){
       .rangeRound([height, 0]);
 
   var z = d3.scaleOrdinal()
-      .range(["#BF812D", "#02818A"]);
+      .range(["#081d58", "#1d91c0"]);
 
   d3.csv("/data/laborforce/labor-married.csv", function(d, i, columns) {
     for (var i = 1, n = columns.length; i < n; ++i) d[columns[i]] = +d[columns[i]];
@@ -26,7 +26,7 @@ function drawGroupBarChart(attrId){
 
     var keys = data.columns.slice(1);
 
-    x0.domain(data.map(function(d) { return d.MaritalStatus; }));
+    x0.domain(data.map(function(d) { return d.Gender; }));
     x1.domain(keys).rangeRound([0, x0.bandwidth()]);
     y.domain([0, d3.max(data, function(d) { return d3.max(keys, function(key) { return d[key]; }); })]).nice();
 
@@ -34,7 +34,7 @@ function drawGroupBarChart(attrId){
       .selectAll("g")
       .data(data)
       .enter().append("g")
-        .attr("transform", function(d) { return "translate(" + x0(d.MaritalStatus) + ",0)"; })
+        .attr("transform", function(d) { return "translate(" + x0(d.Gender) + ",0)"; })
       .selectAll("rect")
       .data(function(d) { return keys.map(function(key) { return {key: key, value: d[key]}; }); })
       .enter().append("rect")

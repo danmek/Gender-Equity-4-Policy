@@ -17,8 +17,8 @@ with open('labor.csv', 'r') as f:
 
 # 2. Initialize the list which will become the csv for D3
 
-headers = ['MaritalStatus', 'Men', 'Women']
-row_names = ['Married, spouse present', 'All other statuses']
+headers = ['Gender', 'Married, spouse present', 'All other statuses']
+row_names = ['Men', 'Women']
 
 labor_d3 = [] 
 
@@ -44,11 +44,11 @@ for row_data in labor:
 			count = count + 1
 
 		elif row_data['Gender'] == "Women" and row_data['MaritalStatus'] == "Married, spouse present":
-			labor_d3[1][2] = row_data['Value']
+			labor_d3[2][1] = row_data['Value']
 			count = count + 1
 		
 		elif row_data['Gender'] == "Men" and row_data['MaritalStatus'] == "All other statuses":
-			labor_d3[2][1] = row_data['Value']
+			labor_d3[1][2] = row_data['Value']
 			count = count + 1
 
 		elif row_data['Gender'] == "Women" and row_data['MaritalStatus'] == "All other statuses":
