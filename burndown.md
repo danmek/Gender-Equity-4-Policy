@@ -9,6 +9,6 @@
 
 
 
-* 128 points added on 1/2 reflects start of Sprint 2
+* 128 points added on 1/12 reflects start of Sprint 2
 
 
