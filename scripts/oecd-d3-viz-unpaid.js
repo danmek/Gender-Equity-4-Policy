@@ -4,7 +4,7 @@ var margin = {top: 30, right: 30, bottom: 70, left: 60},
     height = 400 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
-var svg = d3.select("#my_dataviz")
+var svg = d3.select("#oecd-d3-viz-unpaid")
   .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -30,7 +30,7 @@ var yAxis = svg.append("g")
 function update(selectedVar) {
 
   // Parse the Data
-  d3.csv("data/oecd-d3-viz-unpaid.csv"), 
+  d3.csv("data/oecd-d3-viz-unpaid.csv", 
     function(data) {
 
     // X axis
@@ -57,7 +57,8 @@ function update(selectedVar) {
         .attr("width", x.bandwidth())
         .attr("height", function(d) { return height - y(d[selectedVar]); })
         .attr("fill", "#69b3a2")
-  }
+  })
+}
 
 // Initialize plot
 update('var1')
