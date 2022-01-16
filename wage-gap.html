@@ -2,70 +2,67 @@
 <html>
 
 <head>
-<!--Copid over from Julie's for stylistic cohesion-->
-	<meta charset="utf-8">
 	<link href="styles/style.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
-	<title>Gender Equity for Policy</title>
+	<link href="styles/labor-children.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Adamina&family=Lato:wght@400&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gender Equity for Policy</title>
 </head>
 
 <body>
-	<!--header-->
-	<h1>Gender Wage Gap</h1>
+    <div class="header-section">
+        <div class="topnav">
+            <div class="topnav-left">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+            </div>
+
+            <div class="topnav-right">
+                <a class="active" ref="working-mothers.html">Family vs. Career</a>
+                <a href="wage-gap.html">Wage Gap</a>
+                <a href="hh-distribution.html">Invisible Labor</a>          
+            </div>        
+        </div>
+
+        <div class = "header-text">
+        	<h1 class = "header-text1">Closing the Wage Gap</h1>
+        	<h2 class = "header-text2">Why should you care?</h2>
+        	<div class="header-description">
+        		<div class="header-description-text">
+        			<p>Are you a working professional who champions gender equality and economic opportunity? The proportion of women among skilled professionals continues to increase in today's labor workforce.<br><br>But the data shows us that income disparities by gender persist across sectors and levels of educational attainment.</p>
+        		</div>
+        	</div>
+        </div>
+    </div>
 
 	<!--first chart-->
-	<p class="takeaway">How the U.S. gender wage gap compares to other countries</p>
-	<p class="chartexplain">International gender wage gaps as a percentage, 2020</p>
-	<img src="images/wage-1-oecd.png" alt="How the U.S. gender wage gap compares to other countries">
-	
-	<br>
-	<br>
-	<br>
-
-	<!--second chart-->
-	<p class="takeaway">Women's earnings as a percentage of men's, heatmap by state</p>
-	<p class="chartexplain">Median usual weekly earnings of full-time wage and salary workers, 2020 averages</p>
-	<img src="images/wage-2-states.png" alt="Women's earnings as a percentage of men's, heatmap by state">
-
-	<br>
-	<br>
-	<br>
-
-	<!--third chart-->
-	<p class="takeaway">Gender wage gaps persist among both the top highest and lowest paid occupations in the United States</p>
-	<p class="chartexplain">Median weekly earnings of full-time wage and salary workers, 2019 averages</p>
-	<img src="images/wage-3-occupation.png" alt="Gender wage gaps persist among both the top highest and lowest paid occupations in the United States">
-
-	<br>
-	<br>
-	<br>
-
-	<!--fourth chart-->
-	<p class="takeaway">Educational attainment does little to prevent gender wage gaps for educated women</p>
-	<p class="chartexplain">Median weekly earnings of full-time wage and salary workers, 25 years and older, 2019 averages</p>
-	<img src="images/wage-4-education.png" alt="ducational attainment does little to prevent gender wage gaps for educated women">
-
-	
-	<br>
-	<br>
-	<br>
-
-	<!--sources and notes-->
-	<p class="source">Sources: OECD, Department of Labor, Bureau of Labor Statistics, U.S. Census</p>
-
-	<p class="notes">Notes: The gender wage gap is defined as the difference between median earnings of men and women relative to median earnings of men. Further analysis of intersectional identities with gender (e.g. race, marital status, age) would highlight this impact on wages.</p>
-
-
-	<p class="source">Chart 1: Though this series on the gender wage gap will focus primarily on the United States, you can see that this issue is not unique to the U.S. workforce. Among the top contributers to this inequality are some of the world's most economically developed countries in the OECD.</p>
-	
-
-	<p class="source"> Chart 2: Consider how this heatmap would look if gender wage equality existed across the United States. With a rich, dark blue shade blanketing the country, every state would look more like Connecticut.</p>
-
-
-	<p class="source"> Chart 3: Perhaps you observed the more equal distribution of wages between men and women in the lowest paying occupations. Unfortunately, this is not a sign of equitable compensation. Notice that in the top five highest paying jobs, the gender wage gap is far more acute. This is reflective of the "glass ceiling" that you may have referred to more colloquially.</p>
-
-	<p class="source"> Chart 4: The graph above may seem counterintuitive — the disparity between wages among men and women with more advanced degrees actually widens that gap. we climb the academic ladder to more advanced and professional degrees. This is problematic in a growingly credentialed labor workforce across genders. What might this imply about the value placed in a degree held by a man versus woman?</p>
-
+	<div class="takeaway-container">
+		<p class="takeaway">
+			Women worldwide are paid less regardless of occupation and education
+		</p>
 		
+		<div class="chart-description-container">
+			<div class="chart-description">
+				<p>The United States has among the highest gender wage gaps in the world. A common misbelief is that pay inequality is a problem unique to developing economies. The data tells us otherwise.</p>
+			</div>
+		</div>
+
+				
+		<p class="chart-explain">U.S. labor force participation by gender and age of children, 2020</p>
+		
+		<div class="d3-container">
+			<svg class="chart" id="labor-children" width="500" height="300"></svg>
+		</div>
+		
+		<p class="source">Source: U.S. Bureau of Labor Statics, Current Population Survey</p>
+
+		<p class="notes">Notes: Labor force participation rate represents the percentage of parents in the civilian noninstitutional population 16 years of age and older that are employed or actively looking for work. Children are own children and include biological children, step-children, or adopted children. Estimates refer to co-residential children only.
+		</p>
+	</div>
+
+	<!-- link to js and script files -->
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="/scripts/labor-children.js"></script>
+	
 </body>
 </html>
