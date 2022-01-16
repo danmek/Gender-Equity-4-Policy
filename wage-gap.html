@@ -3,7 +3,7 @@
 
 <head>
 	<link href="styles/style.css" rel="stylesheet">
-	<link href="styles/labor-children.css" rel="stylesheet">
+	<link href="styles/labor_children.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Adamina&family=Lato:wght@400&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Gender Equity for Policy</title>
@@ -67,18 +67,17 @@
 		
 		<div class="chart-description-container">
 			<div class="chart-description">
-				<p>The gender wage gap is not bound by cultural landscape or geographical location. This heatmap of U.S. states shows us income inequality by gender is ubiquitous across the country.</p>
+				<p>The gender wage gap is not bound by cultural, political, or even geographical landscape. This heatmap of U.S. states shows us income inequality by gender is ubiquitous across the country.</p>
 			</div>
 		</div>
 
 				
-		<p class="chart-explain">Median weekly earnings of full-time and salary workers by state</p>
+		<p class="chart-explain">Women's earnings as a percentage of men by state, 2020</p>
 		
+		 <!-- container for wage vis -->
 		<div class="d3-container">
-			<img src="images-old/wage-2-states.png" alt="Women's earnings as a percentage of men's, heatmap by state">
-		</div>
-		
-		<p class="source">Source: U.S. Bureau of Labor Statistics</p>
+	 		<div id="wage-vis"></div>
+			<p class="source">Source: U.S. Bureau of Labor Statistics</p>
 	</div>
 
 	<!--third chart-->
@@ -131,6 +130,15 @@
 	<!-- link to js and script files -->
 	<script src="https://d3js.org/d3.v4.min.js"></script>
 	<script src="/scripts/labor-children.js"></script>
+
+	 <!-- load javascript for wage-vis -->
+    <script src="//d3js.org/d3.v3.min.js"></script>
+    <script src="//d3js.org/queue.v1.min.js"></script>
+    <script src="wage-data-viz/d3-legend.min.js"></script>
+    <script src="//d3js.org/topojson.v1.min.js"></script>
+    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+    <script src="wage-data-viz/wage-viz-java.js"></script>
+
 	
 </body>
 </html>

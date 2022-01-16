@@ -32,7 +32,7 @@ function draw_wage_map() {
     var path = d3.geo.path()
         .projection(projection);
 
-    var colorScale = d3.scale.linear().range(["#D4EEFF", "#073452"]).interpolate(d3.interpolateLab);
+    var colorScale = d3.scale.linear().range(["#b8fffd", "#02042b"]).interpolate(d3.interpolateLab);
 
     var countryById = d3.map();
 
