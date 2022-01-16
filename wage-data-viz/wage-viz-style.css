@@ -1,0 +1,37 @@
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    padding: 40px;
+}
+h1{
+  font-size: 3em;
+  font-weight: 700;
+  color: #0099FF;
+}
+a{
+  color: #333399;
+}
+a:hover{
+  color: #FF0099;
+}
+
+.states {
+    stroke: #fff;
+    stroke-width:1px;
+}
+.states:hover{
+  opacity: .6;
+}
+
+.legendLinear text {
+    font-size: 12px;
+}
+.d3-tip {
+  line-height: 1;
+  padding: 12px;
+  background: rgba(43,43,43, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
