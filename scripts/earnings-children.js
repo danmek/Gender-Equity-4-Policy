@@ -18,7 +18,7 @@ function drawGroupBarChart(attrId){
   var z = d3.scaleOrdinal()
       .range(["#BF812D", "#02818A"]);
 
-  d3.csv("/data/laborforce/earnings-children.csv", function(d, i, columns) {
+  d3.csv("data/laborforce/earnings-children.csv", function(d, i, columns) {
     for (var i = 1, n = columns.length; i < n; ++i) d[columns[i]] = +d[columns[i]];
     return d;
   }, function(error, data) {
