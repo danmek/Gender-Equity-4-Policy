@@ -19,7 +19,7 @@ function draw_wage_map() {
       })
 
 
-    var svg = d3.select('#vis').append('svg')
+    var svg = d3.select('#wage-vis').append('svg')
         .attr('width', width)
         .attr('height', height);
 
