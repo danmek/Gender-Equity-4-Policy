@@ -26,7 +26,7 @@ function drawGroupBarChart(attrId){
 
     var keys = data.columns.slice(1);
 
-    x0.domain(data.map(function(d) { return d.ChildrenAge; }));
+    x0.domain(data.map(function(d) { return d.Children; }));
     x1.domain(keys).rangeRound([0, x0.bandwidth()]);
     y.domain([0, d3.max(data, function(d) { return d3.max(keys, function(key) { return d[key]; }); })]).nice();
 
@@ -34,7 +34,7 @@ function drawGroupBarChart(attrId){
       .selectAll("g")
       .data(data)
       .enter().append("g")
-        .attr("transform", function(d) { return "translate(" + x0(d.ChildrenAge) + ",0)"; })
+        .attr("transform", function(d) { return "translate(" + x0(d.Children) + ",0)"; })
       .selectAll("rect")
       .data(function(d) { return keys.map(function(key) { return {key: key, value: d[key]}; }); })
       .enter().append("rect")

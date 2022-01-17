@@ -3,7 +3,6 @@
 
 <head>
   <link href="styles/style.css" rel="stylesheet">
-  <link href="styles/labor-children.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Adamina&family=Lato:wght@400&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Unpaid Labor</title>
@@ -18,7 +17,7 @@
             </div>
 
             <div class="topnav-right">
-                <a ref="working-mothers.html">Family vs. Career</a>
+                <a href="working-mothers.html">Family vs. Career</a>
                 <a href="wage-gap.html">Wage Gap</a>
                 <a class="active" href="unpaid-labor-burden.html">Invisible Labor</a>          
             </div>        
@@ -53,15 +52,12 @@
         </p>
       </div>
     </div>
-
         
     <p class="chart-explain">Time spent on unpaid work by gender, OECD data, 2022</p>
     
     <div class="d3-container">
-      <svg class="chart" id="unpaid-labor" width="500" height="300"></svg>
+      <svg class="chart" id="oecd-d3-viz-unpaid" width="500" height="300"></svg>
     </div>
-    <!-- CHART 1 -->
-<div id="oecd-d3-viz-unpaid"></div>
 
     <p class="source">Source: <a href="https://stats.oecd.org/index.aspx?queryid=54757">OECD website</a> </p>
   </div>
@@ -88,7 +84,7 @@
     <p class="chart-explain">Total time spent working by gender, OECD data, 2022</p>
     
     <div class="d3-container">
-      <svg class="chart" id="unpaid-labor" width="500" height="300"></svg>
+      <svg class="chart" id="total-labor" width="500" height="1000"></svg>
     </div>
     
     <p class="source">Source: <a href="https://stats.oecd.org/index.aspx?queryid=54757/">OECD website</a> </p>
@@ -138,7 +134,7 @@
   </div>
 
   <!-- link to js and script files -->
-<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="//d3js.org/d3.v4.min.js"></script>
 <script src="/scripts/oecd-d3-viz-unpaid.js"></script>
 <script src="/scripts/oecd-d3-viz-total.js"></script>
 
