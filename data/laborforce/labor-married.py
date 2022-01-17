@@ -1,9 +1,11 @@
 # This script is run after labor.py, which creates the file I call in this python script
 
-# Data for D3 visualzation - labor force participation by gender and marital status 
+# Data for D3 visualzation - labor force participation by gender and age of children
+# Note: the script is the same across labor-children.py, labor-married.py, and earnings-children.py, but with different arguments.
 
 import csv
 from pprint import pprint
+import pandas as pd
 
 # 1. read csv file 
 
@@ -13,79 +15,60 @@ with open('labor.csv', 'r') as f:
 
 # confirming headers
 # print(labor[0].keys())
-#['seriesid', 'Year', 'Period', 'Label', 'Value', '12-Month Net Change', '12-Month % Change', 'Children', 'Gender', 'MaritalStatus']
+#['seriesid', 'Year', 'Period', 'Label', 'Value', '12-Month Net Change', '12-Month % Change', 
+# 'Children', 'Gender', 'MaritalStatus']
 
-# 2. Initialize the list which will become the csv for D3
+df_raw = pd.DataFrame(labor)
+
+# 2. initialize headers & rows - the csv file that is required for the D3 visualization
 
 headers = ['Gender', 'Married, spouse present', 'All other statuses']
 row_names = ['Men', 'Women']
+category = 'MaritalStatus'
 
-labor_d3 = [] 
+# 3. create a dataframe that will become csv for d3
 
-labor_d3.append(headers)
+data_d3 = []
 
-for i in row_names:
-	labor_d3.append([i, 0, 0])
+row = []
+for r in row_names:
+	row = [r]
+	for h in headers[1:]:
+		row.append(0)
+	data_d3.append(row)
 
-# 3. Choose relevant data series
+df_d3 = pd.DataFrame(data_d3, columns=headers)
 
-# Men, under 18, "Married, spouse present"
-# Men, under 18, "All other statuses"
-# Women, under 18, "Married, spouse present"
-# Women, under 18, "All other statuses"
+# pprint(df_d3)
+# pprint(list(df_d3.columns))
 
-count = 0 # double check for duplicates
+# 3. filter for the rows I need
 
-for row_data in labor:
-	if row_data['Children'] == 'under 18' and row_data['Label'] == '2020 Annual':
+whitelist_label = ['2020 Annual'] # year, period, label all refer to same things in this dataset
+whitelist_children = ['under 18']
+whitelist_gender = ['Men', 'Women']
+whitelist_status = ['Married, spouse present', 'All other statuses']
 
-		if row_data['Gender'] == "Men" and row_data['MaritalStatus'] == "Married, spouse present":
-			labor_d3[1][1] = row_data['Value']
-			count = count + 1
+df_raw = df_raw.query('Label in @whitelist_label')
+df_raw = df_raw.query('Children in @whitelist_children')
+df_raw = df_raw.query('Gender in @whitelist_gender')
+df_raw = df_raw.query('MaritalStatus in @whitelist_status')
 
-		elif row_data['Gender'] == "Women" and row_data['MaritalStatus'] == "Married, spouse present":
-			labor_d3[2][1] = row_data['Value']
-			count = count + 1
-		
-		elif row_data['Gender'] == "Men" and row_data['MaritalStatus'] == "All other statuses":
-			labor_d3[1][2] = row_data['Value']
-			count = count + 1
+# pprint(df_raw.head())
 
-		elif row_data['Gender'] == "Women" and row_data['MaritalStatus'] == "All other statuses":
-			labor_d3[2][2] = row_data['Value']
-			count = count + 1
+# 4. add values of the filtered rows into the corresponding dataframe
 
-# pprint(labor_d3)
-# pprint(count)
+# looping through raw data
+# if the raw data matches the row_names and category, add 
+for index in df_raw.index:
+	for r in row_names:
+		if df_raw.loc[index, headers[0]]==r:
+			for h in headers[1:]:
+				if df_raw.loc[index, category] == h:
+					df_d3.loc[row_names.index(r), h] = df_raw.loc[index, 'Value']
 
+# print(df_d3)
 
-# 4. convert into dictionary
+# 5. write out csv 
 
- # blank dictionary with only keys 
-
-# rows = []
-# row = []
-
-# for r in row_names:
-# 	for h in headers:
-# 		if h == headers[0]:
-# 			row.append(r)
-# 		else:
-# 			row.append(None)
-# 	rows.append(row)
-# 	row = []
-
-labor_d3_dict = []
-
-for i in labor_d3[1:]:
-	d = {k:v for k,v in zip(headers, i)}
-	labor_d3_dict.append(d)
-
-# pprint(labor_d3_dict)
-
-# 5. create new csv file 
-with open('labor-married.csv', 'w') as f:
-    writer = csv.writer(f)
-    writer.writerow(labor_d3_dict[0].keys())
-    for i in labor_d3_dict:
-        writer.writerow(i.values())
+df_d3.to_csv('labor-married.csv', index=False)

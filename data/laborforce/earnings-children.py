@@ -1,9 +1,11 @@
-# This script is run after earnings.py, which creates the file I call in this python script
+# This script is run after labor.py, which creates the file I call in this python script
 
-# Data for D3 visualzation - earnings by gender and age of children
+# Data for D3 visualzation - labor force participation by gender and age of children
+# Note: the script is the same across labor-children.py, labor-married.py, and earnings-children.py, but with different arguments.
 
 import csv
 from pprint import pprint
+import pandas as pd
 
 # 1. read csv file 
 
@@ -12,62 +14,61 @@ with open('earnings.csv', 'r') as f:
     earnings = list(reader)
 
 # confirming headers
-# print(earnings[0].keys())
-#['seriesid', 'Year', 'Period', 'Label', 'Value', '12-Month Net Change', '12-Month % Change', 'Children', 'Gender', 'MaritalStatus']
+# print(labor[0].keys())
+#['seriesid', 'Year', 'Period', 'Label', 'Value', '12-Month Net Change', '12-Month % Change', 
+# 'Children', 'Gender', 'MaritalStatus']
 
-# 2. Initialize the list which will become the csv for D3
+df_raw = pd.DataFrame(earnings)
 
-headers = ['ChildrenAge', 'Men', 'Women']
+# 2. initialize headers & rows - the csv file that is required for the D3 visualization
+
+headers = ['Children', 'Men', 'Women']
 row_names = ['under 6', '6 to 17', 'under 18']
+category = 'Gender'
 
-earnings_d3 = [] 
+# 3. create a dataframe that will become csv for d3
 
-earnings_d3.append(headers)
+data_d3 = []
 
-for i in row_names:
-	earnings_d3.append([i, 0, 0])
+row = []
+for r in row_names:
+	row = [r]
+	for h in headers[1:]:
+		row.append(0)
+	data_d3.append(row)
 
-# 3. Choose relevant data series
+df_d3 = pd.DataFrame(data_d3, columns=headers)
 
-# Men, under 18, "Married, spouse present"
-# Men, under 18, "All other statuses"
-# Women, under 18, "Married, spouse present"
-# Women, under 18, "All other statuses"
+# pprint(df_d3)
+# pprint(list(df_d3.columns))
 
-count = 0 # double check for duplicates
+# 3. filter for the rows I need
 
-for row_data in earnings:
-	if row_data['MaritalStatus'] == 'N/A' and row_data['Label'] == '2020 Annual':
-		if row_data['Children'] == "under 6" and row_data['Gender'] == 'Men':
-			earnings_d3[1][1]= row_data['Value']
-			count = count + 1
-		elif row_data['Children'] == "under 6" and row_data['Gender'] == 'Women':
-			earnings_d3[1][2]= row_data['Value']
-			count = count + 1
-		if row_data['Children'] == "6 to 17" and row_data['Gender'] == 'Men':
-			earnings_d3[2][1]= row_data['Value']
-			count = count + 1
-		elif row_data['Children'] == "6 to 17" and row_data['Gender'] == 'Women':
-			earnings_d3[2][2]= row_data['Value']
-			count = count + 1		
-		if row_data['Children'] == "under 18" and row_data['Gender'] == 'Men':
-			earnings_d3[3][1]= row_data['Value']
-			count = count + 1
-		elif row_data['Children'] == "under 18" and row_data['Gender'] == 'Women':
-			earnings_d3[3][2]= row_data['Value']
-			count = count + 1
+whitelist_label = ['2020 Annual'] # year, period, label all refer to same things in this dataset
+whitelist_children = ['under 6', '6 to 17', 'under 18']
+whitelist_gender = ['Men', 'Women']
+whitelist_status = 'N/A'
 
-earnings_d3_dict = []
+df_raw = df_raw.query('Label in @whitelist_label')
+df_raw = df_raw.query('Children in @whitelist_children')
+df_raw = df_raw.query('Gender in @whitelist_gender')
+df_raw = df_raw.query('MaritalStatus in @whitelist_status')
 
-for i in earnings_d3[1:]:
-	d = {k:v for k,v in zip(headers, i)}
-	earnings_d3_dict.append(d)
+# pprint(df_raw.head())
 
-# pprint(earnings_d3_dict)
+# 4. add values of the filtered rows into the corresponding dataframe
 
-# 5. create new csv file 
-with open('earnings-children.csv', 'w') as f:
-    writer = csv.writer(f)
-    writer.writerow(earnings_d3_dict[0].keys())
-    for i in earnings_d3_dict:
-        writer.writerow(i.values())
+# looping through raw data
+# if the raw data matches the row_names and category, add 
+for index in df_raw.index:
+	for r in row_names:
+		if df_raw.loc[index, headers[0]]==r:
+			for h in headers[1:]:
+				if df_raw.loc[index, category] == h:
+					df_d3.loc[row_names.index(r), h] = df_raw.loc[index, 'Value']
+
+# print(df_d3)
+
+# 5. write out csv 
+
+df_d3.to_csv('earnings-children.csv', index=False)
