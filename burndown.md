@@ -15,8 +15,12 @@ Sprint 2
 | Wed, 1/12, 3pm | In-person | 0 | 128 | 25 | 11 | 3 | 5 | 6 | 103 |
 | Thu, 1/13, 3pm | In-person | 0 | 103 | 34 | 10 | 12 | 8 | 4 | 69 |
 | Fri, 1/14, 3pm | In-person | 0 | 69 | 36 | 10 | 10 | 6 | 10 | 33 |
-| Sat, 1/14, 3pm | In-person | 0 | 33 | 33 | 9 | 10 | 8 | 5 | 1 |
-| Sun, 1/15, 3pm | Slack | 0 | 1 | 1 | 1 | 0 | 0 | 0 | 0 |
+| Sat, 1/15, 3pm | In-person | 0 | 33 | 33 | 9 | 10 | 5 | 5 | 1 |
+| Sun, 1/16, 3pm | No Meeting | 0 | 4 | 3 | 0 | 0 | 3 | 0 | 1 |
+| Mon, 1/17, 3pm | Slack | 5 | 6 | 6 | 6 | 0 | 0 | 0 | 0 |
+
+Notes:
+* Monday, 1/17: 5 points were added because there was extra time spent debugging D3 visualization merges from different branches - required more points than anticipated and falls under the "cohesive narrative" user story.
 
 
 
