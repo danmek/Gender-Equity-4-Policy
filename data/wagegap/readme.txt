@@ -69,6 +69,9 @@ Political: leaning by presidential election 2020 - The American Presidency Proje
 
 #Adjust stylistic changes as preferred and voila!
 
+---->readme-wage-state<-----
+D3 visualization on this one, but note that state-wagegap.csv still uses a heading called mortality because the code is copied and pasted from a source that uses mortality as a heading
+
 ---->readme-wage-education<-----
 #Get the data from: https://www.bls.gov/opub/reports/womens-databook/2020/home.htm 
 
