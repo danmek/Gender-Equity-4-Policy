@@ -176,6 +176,11 @@ h3 {
 }
 
 /* HOME PAGE TOPICS SECTION */
+
+.topics-section {
+  padding: 0px 5% 0px 5%;
+}
+
 #topics-headline {
   padding: 50px;
   text-align: center;
@@ -184,8 +189,9 @@ h3 {
 /* Create three equal columns that floats next to each other */
 .topics-column {
   float: left;
-  width: 33.33%;
-  height: 300px; /* Should be removed. Only for demonstration */
+  width: 29.33%;
+  text-align: center;
+  margin: 0px 2% 10% 2%;
 }
 
 /* Clear floats after the columns */
@@ -195,9 +201,6 @@ h3 {
   clear: both;
 }
 
-.topics-column{
-  text-align: center;
-}
 
 .topics-column a{
   color: #015f66;
