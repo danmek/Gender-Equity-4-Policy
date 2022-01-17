@@ -5,3 +5,5 @@ Links for Final Project submission:
 * Burndown: https://github.com/danmek/Gender-Equity-4-Policy/blob/main/burndown.md
 * Website: https://danmek.github.io/Gender-Equity-4-Policy/
 * Github Repo: https://github.com/danmek/Gender-Equity-4-Policy
+
+Note: Archive is old files for team's learning purposes
