@@ -38,8 +38,8 @@ function draw_wage_map() {
 
     // we use queue because we have 2 data files to load.
     queue()
-        .defer(d3.json, "USA.json")
-        .defer(d3.csv, "mortality.csv", typeAndSet) // process
+        .defer(d3.json, "data/wagegap/USA.json")
+        .defer(d3.csv, "data/wagegap/state-wagegap.csv", typeAndSet) // process
         .await(loaded);
 
     function typeAndSet(d) {
