@@ -40,6 +40,11 @@ h3 {
   text-align: center;
   margin: 30px 15% 50px 15%;
   color: #015f66;
+  text-transform: lowercase;
+}
+
+.takeaway:first-letter{
+  text-transform: capitalize;
 }
 
 .chart-description-container {
