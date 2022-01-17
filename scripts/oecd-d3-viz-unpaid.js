@@ -59,7 +59,7 @@ function drawGroupBarChart(attrId){
         .attr("fill", "#000")
         .attr("font-weight", "bold")
         .attr("text-anchor", "start")
-        .text("Hours per day");
+        .text("Minutes per day");
 
     var legend = g.append("g")
         .attr("font-family", "sans-serif")
