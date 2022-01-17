@@ -1,50 +1,86 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>About us page gender eaquality</title>
-<link rel="stylesheet" type="text/css" href="styles/style.css">
-  </head>
-  <body>
-    <h1>About us</h1>
-    
-    <p>We are Harvard Kennedy School students that are willing to promote gender equality. <br>
-      We decided to use our new programming and data skills to make the data on this topic more accessible, to raise awareness of the gaps.</p>
-<br>
 
-    <h2>Juli Cho</h2>
-    <h4>The initiator of the idea</h4>
-    <p> Juli is pursuing an MPA at Harvard Kennedy School of Government and holds an MBA from Stanford Graduate School of Business. <br>
-    She was born and raised in South Korea - a country where women have some of the highest labor force participation and educational attainment in the world, but also face some of the worst gender inequality in the world. Prior to graduate school, she worked in economic development in Sub-Saharan Africa at TechnoServe, an international NGO. After graduate school, she will be joining BCG’s New York office. She enjoys baking, photography, and craft beer.<br>
-  <a href="https://www.linkedin.com/in/juli-h-cho/"><img src="images/linkedin.png" alt="LinkedIn"></a> </p>
-  <img src="images/Juli.png" alt="Juli Cho.">
-<br>
-<br>
+<head>
+	<link href="styles/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Adamina&family=Lato:wght@400&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gender Equity for Policy</title>
+</head>
 
-    <h2>Dana Mekler</h2>
-    <h4>Project owner</h4>
-    <p>Dana is an MPA Candidate at Harvard Kennedy School of Government and holds an MBA from MIT Sloan. <br>
-    She was born and grew up in Mexico City, in a context where career and life expectations were strongly influenced by traditional gender roles. She has worked as a Senior Product Manager at Amazon Web Services; as Director of Strategy and Innovation at “TEACH-NOW”, an edtech startup with proprietary education software, leading product management and their technological innovation portfolio. She was also Global Program Manager of the empathy initiative at Ashoka. She enjoys hiking, travel and live music.<br>
-  <a href="https://www.linkedin.com/in/dana-mekler-00960a51/"><img src="images/linkedin.png" alt="LinkedIn"></a> </p>
-  <img src="images/Dana.png" alt="Dana Mekler.">
-<br>
-<br>
+<body>
+    <div class="header-section">
+        <div class="topnav">
+            <div class="topnav-left">
+                <a href="index.html">Home</a>
+                <a class="active" href="about.html">About</a>
+            </div>
 
-    <h2>Kelly Yun</h2>
-    <p>Kelly is an MPA Candidate at Harvard Kennedy School of Government. <br>
-She is a mission-driven professional committed to addressing global challenges through strategic solutions and innovation. She was Chair of the Human Welfare and Community Action Commission in the City of Berkeley and a member of the Chancellor's Staff Advisory Committee at the University of California, Berkeley, where she also completed her bachelor’s degree.<br>
- <a href="https://www.linkedin.com/in/kellyyun88/"><img src="images/linkedin.png" alt="LinkedIn"></a> </p>
-  <img src="images/Kelly.png" alt="Kelly Yun.">
-<br>
-<br>
- 
-  <h2>Yael Abadi</h2>
-    <p>Yael is an MPA Candidate at Harvard Kennedy School of Government. <br>
-Prior to HKS, she worked as an Economist at the budget department in Israel's Ministry of Finance, where she was in charge of the public transportation sector; Project manager in Professor Dan Ariely, (a world Behavioral Economics expert) consulting firm, where she directed the education and welfare sections; Correspondent and news anchor on Israel's most popular television channel and radio station.
-Yael holds a Master's in Research Economics, and received an “Excellence Award” for her thesis about women in the workforce, and specifically in tech. <br>
- <a href="https://www.linkedin.com/in/yael-abadi-786aa588/"><img src="images/linkedin.png" alt="LinkedIn"></a> </p>
-  <img src="images/Yael.png" alt="Yael Abadi.">
- 
-  
-  </body>
+            <div class="topnav-right">
+                <a href="working-mothers.html">Family vs. Career</a>
+                <a href="wage-gap.html">Wage Gap</a>
+                <a href="unpaid-labor-burden.html">Invisible Labor</a>          
+            </div>        
+        </div>
+
+        <div class = "header-text">
+        	<h1 class = "header-text1">About us</h1>
+        	<div class="header-description">
+        		<div class="header-description-text">
+        			<p>We are Harvard Kennedy School students passionate about promoting gender equality. We want to leverage programming and data skills to make data on this topic more accessible and raise more awareness of hidden gaps. </p>
+        		</div>
+        	</div>
+        </div>
+    </div>
+
+    <!-- team members -->
+    <div class="how-section"> <!-- reusing how-section columns style-wise -->
+        <div class='how-column'>
+            <h3>Juli (Hye Ryeong) Cho</h3>
+            <h4>The initiator of the idea </h4>
+            <img id="headshot" src="images/Juli.png" alt="Juli Cho.">
+        </div>
+
+        <div class='how-column'>
+        	<p> Juli is pursuing an MPA at Harvard Kennedy School of Government and holds an MBA from Stanford Graduate School of Business. <br><br> She was born and raised in South Korea - a country where women have some of the highest labor force participation and educational attainment in the world, but also face some of the worst gender inequality in the world. Prior to graduate school, she worked in economic development in Sub-Saharan Africa at TechnoServe, an international NGO. After graduate school, she will be joining BCG’s New York office. She enjoys baking, photography, and craft beer.<br> <br>
+        	<a href="https://www.linkedin.com/in/juli-h-cho/"><img src="images/linkedin.png" alt="LinkedIn"></a></p>
+        </div>
+    </div>	
+
+    <div class="how-section"> <!-- reusing how-section columns style-wise -->
+        <div class='how-column'>
+            <h3>Dana Mekler</h3>
+            <h4>Project owner</h4>
+            <img id="headshot" src="images/Dana.png" alt="Dana Mekler.">
+        </div>
+
+        <div class='how-column'>
+        	<p> Dana is an MPA Candidate at Harvard Kennedy School of Government and holds an MBA from MIT Sloan.<br> <br>    She was born and grew up in Mexico City, in a context where career and life expectations were strongly influenced by traditional gender roles. She has worked as a Senior Product Manager at Amazon Web Services; as Director of Strategy and Innovation at “TEACH-NOW”, an edtech startup with proprietary education software, leading product management and their technological innovation portfolio. She was also Global Program Manager of the empathy initiative at Ashoka. She enjoys hiking, travel and live music.<br><br>  <a href="https://www.linkedin.com/in/dana-mekler-00960a51/"><img src="images/linkedin.png" alt="LinkedIn"></a> </p>
+        </div>
+    </div>
+
+
+    <div class="how-section"> <!-- reusing how-section columns style-wise -->
+        <div class='how-column'>
+            <h3>Kelly Yun</h3>
+            <img id="headshot" src="images/Kelly.png" alt="Kelly Yun.">
+        </div>
+
+        <div class='how-column'>
+        	<p> Kelly is an MPA Candidate at Harvard Kennedy School of Government. <br><br> She is a mission-driven professional committed to addressing global challenges through strategic solutions and innovation. She was Chair of the Human Welfare and Community Action Commission in the City of Berkeley and a member of the Chancellor's Staff Advisory Committee at the University of California, Berkeley, where she also completed her bachelor’s degree.<br> <br> <a href="https://www.linkedin.com/in/kellyyun88/"><img src="images/linkedin.png" alt="LinkedIn"></a></p>
+        </div>
+    </div>
+
+    <div class="how-section"> <!-- reusing how-section columns style-wise -->
+        <div class='how-column'>
+            <h3>Yael Abadi</h3>
+            <img id="headshot" src="images/Yael.png" alt="Yael Abadi.">
+        </div>
+
+        <div class='how-column'>
+        	<p> Yael is an MPA Candidate at Harvard Kennedy School of Government. <br><br> Prior to HKS, she worked as an Economist at the budget department in Israel's Ministry of Finance, where she was in charge of the public transportation sector; Project manager in Professor Dan Ariely, (a world Behavioral Economics expert) consulting firm, where she directed the education and welfare sections; Correspondent and news anchor on Israel's most popular television channel and radio station. Yael holds a Master's in Research Economics, and received an “Excellence Award” for her thesis about women in the workforce, and specifically in tech. <br><br> <a href="https://www.linkedin.com/in/yael-abadi-786aa588/"><img src="images/linkedin.png" alt="LinkedIn"></a> </p>
+        </div>
+    </div>
+
+</body>
 </html>
