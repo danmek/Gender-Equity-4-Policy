@@ -2,7 +2,7 @@ function draw_wage_map() {
         //
 
     var width = 900;
-        height = 700;
+        height = 600;
 
     var tip = d3.tip()
       .attr('class', 'd3-tip')
@@ -26,7 +26,7 @@ function draw_wage_map() {
     svg.call(tip);
 
     var projection = d3.geo.albersUsa()
-        .scale(900) // mess with this if you want
+        .scale(950) // mess with this if you want
         .translate([width / 2, height / 2]);
 
     var path = d3.geo.path()
