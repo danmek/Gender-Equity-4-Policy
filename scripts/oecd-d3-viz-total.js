@@ -59,7 +59,7 @@ function drawGroupBarChart(attrId){
         .attr("fill", "#000")
         .attr("font-weight", "bold")
         .attr("text-anchor", "start")
-        .text("Median weekly earnings, $");
+        .text("Hours per day");
 
     var legend = g.append("g")
         .attr("font-family", "sans-serif")
